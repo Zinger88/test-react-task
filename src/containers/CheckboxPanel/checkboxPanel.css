@@ -1,6 +1,6 @@
 .checkboxPanel {
 	position: fixed;
-	top: 100px;
+	bottom: 150px;
 	left: 15px;
 }
 
@@ -15,7 +15,6 @@
 	display: block;
 	width: 100px;
 	height: 50px;
-	border-radius: 50px;
 	border: 1px solid #e8e8e8;
 	background: #f2f2f2;
 	cursor: pointer;
@@ -23,7 +22,7 @@
 
 .checkboxPanel input:checked+label:after {
 	content: "CM";
-	left: calc(100% - 44px);
+	left: calc(100% - 48px);
 }
 
 .checkboxPanel input+label:after {
@@ -31,9 +30,8 @@
 	position: absolute;
 	left: 2px;
 	top: calc(50% - 20px);
-	width: 40px;
-	height: 40px;
-	border-radius: 50px;
+	width: 43px;
+	height: 39px;
 	background: #e8e8e8;
 	border: 1px solid #0f93dd;
 	display: flex;
