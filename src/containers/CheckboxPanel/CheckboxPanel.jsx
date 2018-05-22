@@ -5,30 +5,21 @@ import * as actionCreators from './actions';
 import './checkboxPanel.css';
 
 class CheckboxPanel extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			checked: false
-		}
-	}
+	
 
 	handleChange = () => {
-		this.setState({
-			checked: !this.state.checked
-		});
-
-		this.props.switchUnit();
-
-		console.log(this.state);
+		this.props.switchUnit(!this.props.unit.CheckboxPanel.checked);
 	}
 
 	render() {
+		const { checked } = this.props.unit.CheckboxPanel;
 		return (
 			<div className="checkboxPanel">
+				
 				<input 
 					type="checkbox"
 					id="ch_1"
-					defaultChecked = {this.state.checked}
+					defaultChecked = {checked}
 					onChange={this.handleChange}
 				/>
 				<label htmlFor="ch_1"></label>
@@ -41,7 +32,7 @@ class CheckboxPanel extends Component {
 
 let mapStateToProps = (state) => {
     return {
-    	check: state.checked
+    	unit: state
     }
 };
 

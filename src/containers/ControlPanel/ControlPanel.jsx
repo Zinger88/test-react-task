@@ -31,7 +31,10 @@ export class ControlPanel extends Component {
             scrollY: false
         };
 
+        //console.log(this.props.unit)
+
         return (
+
             <div className="control-panel">
                 <ReactIScroll iScroll={iScroll} options={options}>
                     <div className="iscroll-wrap" style={{ width: computedWidth }}>
@@ -39,7 +42,7 @@ export class ControlPanel extends Component {
                             {
                                 Object.keys(this.props.modes).map(mode =>
                                     this.props.modes[mode].items.map(item => 
-                                        <ItemBox item={item} isActive={this.isItemActive(item)} onHovered={this.itemHoveredHandler.bind(this, item, mode)} />
+                                        <ItemBox item={item} toCM={this.props.unit} isActive={this.isItemActive(item)} onHovered={this.itemHoveredHandler.bind(this, item, mode)} />
                                     )
                                 )
                             }
@@ -53,6 +56,7 @@ export class ControlPanel extends Component {
 
 let mapStateToProps = (state) => {
     return {
+        unit: state.CheckboxPanel.checked,
         modes: state.ControlPanel.modes,
         currentItems: state.ControlPanel.currentItems
     };

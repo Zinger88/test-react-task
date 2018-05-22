@@ -11,7 +11,7 @@ export const Item = (props) => {
                 <Canvas size={props.size} item={props.item} projection={projection} />
                 {
                     props.measures.map((measure, i) => {
-                        return <Measure key={i} {...measure} />;
+                        return <Measure toCM={props.toCM} key={i} {...measure} />;
                     })
                 }
             </div>

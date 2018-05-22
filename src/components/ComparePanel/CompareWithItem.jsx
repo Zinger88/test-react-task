@@ -9,13 +9,15 @@ export const CompareWithItem = (props) => {
     const itemMeasures = measures(props.item, compareWithItemCalculations.item.size);
     return (
         <DragArea bodySize = {props.bodySize} calculations = {compareWithItemCalculations}>
-            <Item 
+            <Item
+                toCM={props.toCM}
                 size={ compareWithItemCalculations.product.size }
                 position={ compareWithItemCalculations.product.position }
                 measures={ productMeasures }
                 item={ props.product }
             />
             <Item 
+                toCM={props.toCM}
                 size={ compareWithItemCalculations.item.size }
                 position={ compareWithItemCalculations.item.position }
                 measures={ itemMeasures }

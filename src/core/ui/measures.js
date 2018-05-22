@@ -1,4 +1,4 @@
-import { distanceBetweenPoints, mmToIn } from '../utils';
+import { distanceBetweenPoints, mmToIn, mmToCm } from '../utils';
 import { 
     ITEM_MARGIN_TOP,
     ITEM_MARGIN_LEFT,
@@ -49,9 +49,15 @@ export const measures = (item, size) => {
         );
 
         //setup text labels
+
         let text = {
             caption: `${mmToIn(measure.size)} in`
         };
+
+        let textOnCm = {
+            caption: `${mmToCm(measure.size)} cm`
+        };
+
         const { arrowWidth, textOffsetX, textOffsetY } = getMeasureDimensions(measureWidth, text.caption, verticalMeasure);
         text.top = `${textOffsetY}px`;
         text.left = `${textOffsetX}px`;
@@ -84,6 +90,7 @@ export const measures = (item, size) => {
             arrowWidth: `${arrowWidth}px`,
             deg,
             text,
+            textOnCm,
             transformOriginX,
             transformOriginY
         };

@@ -26,7 +26,7 @@ export const Measure = (props) => {
         <div className="measure__left" style={arrowStyle}>
             <div className="measure__arrow"></div>
         </div>
-        <div className="measure__text" style={textStyle}>{props.text.caption}</div>
+        <div className="measure__text" style={textStyle}>{!props.toCM ? props.text.caption : props.textOnCm.caption}</div>
         <div className="measure__right" style={arrowStyle}>
             <div className="measure__arrow"></div>
         </div>

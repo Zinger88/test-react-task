@@ -1,7 +1,7 @@
 import { SWITCH_UNIT } from '../../constants/actions';
 
 const initialState = {
-	check: false
+	checked: false
 }
 
 export default function handle(state=initialState, action) {
@@ -9,7 +9,7 @@ export default function handle(state=initialState, action) {
         case SWITCH_UNIT: 
             return  {
                 ...state,
-                check: state.checked
+                checked: action.payload
  
             };
         default: 

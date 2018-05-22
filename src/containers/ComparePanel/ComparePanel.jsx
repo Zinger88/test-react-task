@@ -21,6 +21,7 @@ export class ComparePanel extends Component {
             height = this.comparePanelBody.offsetHeight;
         return (
             <CompareWithItem 
+                toCM={this.props.unit}
                 key={item.id} 
                 product={product} 
                 item={item} 
@@ -46,6 +47,7 @@ export class ComparePanel extends Component {
 
 let mapStateToProps = (state) => {
     return {
+        unit: state.CheckboxPanel.checked,
         currentMode: state.ControlPanel.currentMode,
         currentItems: state.ControlPanel.currentItems,
         product: state.ComparePanel.product
